@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   SafeAreaView,
@@ -16,99 +8,117 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {createAppContainer} from 'react-navigation';
+import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>HomeScreen</Text>
+      </View>
+    )
+  }
+}
+
+class ProfileScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>ProfileScreen</Text>
+      </View>
+    )
+  }
+}
+
+class HistoryScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>HistoryScreen</Text>
+      </View>
+    )
+  }
+}
+
+class CartScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>CartScreen</Text>
+      </View>
+    )
+  }
+}
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
-export default App;
+const TabNavigator = createMaterialBottomTabNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+             <Text>a</Text>
+            {/* <Icon style={[{color: tintColor}]} size={25} name={'ios-home'} /> */}
+          </View>
+        ),
+      }
+    },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+             <Text>a</Text>
+          </View>
+        ),
+        activeColor: '#ffffff',
+        inactiveColor: '#a3c2fa',
+        barStyle: { backgroundColor: '#2163f6' },
+      }
+    },
+    History: {
+      screen: HistoryScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+             <Text>a</Text>
+          </View>
+        ),
+        activeColor: '#ffffff',
+        inactiveColor: '#92c5c2',
+        barStyle: { backgroundColor: '#2c6d6a' },
+      }
+    },
+    Cart: {
+      screen: CartScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => (
+          <View>
+            <Text>a</Text>
+          </View>
+        ),
+        activeColor: '#ffffff',
+        inactiveColor: '#ebaabd',
+        barStyle: { backgroundColor: '#d13560' },
+      }
+    },
+  },
+  {
+    initialRouteName: 'Home',
+    activeColor: '#ffffff',
+    inactiveColor: '#bda1f7',
+    barStyle: { backgroundColor: '#6948f4' },
+  }
+);
+
+export default createAppContainer(TabNavigator);
