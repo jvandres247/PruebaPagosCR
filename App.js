@@ -6,119 +6,61 @@ import {
   View,
   Text,
   StatusBar,
+  YellowBox
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import WebView from './Pages/WebView'
+import PayPal from './Pages/PayPal'
+import Stripe from './Pages/Stripe'
+
 import {createAppContainer} from 'react-navigation';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>HomeScreen</Text>
-      </View>
-    )
-  }
-}
-
-class ProfileScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>ProfileScreen</Text>
-      </View>
-    )
-  }
-}
-
-class HistoryScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>HistoryScreen</Text>
-      </View>
-    )
-  }
-}
-
-class CartScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>CartScreen</Text>
-      </View>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
+console.disableYellowBox = true;
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
-    Home: {
-      screen: HomeScreen,
+    WebView: {
+      screen: WebView,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-             <Text>a</Text>
-            {/* <Icon style={[{color: tintColor}]} size={25} name={'ios-home'} /> */}
-          </View>
-        ),
+        
       }
     },
-    Profile: {
-      screen: ProfileScreen,
+    PayPal: {
+      screen: PayPal,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
+        /* tabBarIcon: ({ tintColor }) => (
           <View>
              <Text>a</Text>
           </View>
         ),
         activeColor: '#ffffff',
         inactiveColor: '#a3c2fa',
-        barStyle: { backgroundColor: '#2163f6' },
+        barStyle: { backgroundColor: '#2163f6' }, */
       }
     },
-    History: {
-      screen: HistoryScreen,
+    Stripe: {
+      screen: Stripe,
       navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-             <Text>a</Text>
-          </View>
-        ),
-        activeColor: '#ffffff',
-        inactiveColor: '#92c5c2',
-        barStyle: { backgroundColor: '#2c6d6a' },
+        // tabBarIcon: ({ tintColor }) => (
+        //   <View>
+        //      <Text>a</Text>
+        //   </View>
+        // ),
+        // activeColor: '#ffffff',
+        // inactiveColor: '#92c5c2',
+        // barStyle: { backgroundColor: '#2c6d6a' },
       }
-    },
-    Cart: {
-      screen: CartScreen,
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <View>
-            <Text>a</Text>
-          </View>
-        ),
-        activeColor: '#ffffff',
-        inactiveColor: '#ebaabd',
-        barStyle: { backgroundColor: '#d13560' },
-      }
-    },
+    }
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'WebView',
     activeColor: '#ffffff',
     inactiveColor: '#bda1f7',
     barStyle: { backgroundColor: '#6948f4' },
+    
   }
 );
+
 
 export default createAppContainer(TabNavigator);
