@@ -9,7 +9,7 @@ import {
   YellowBox
 } from 'react-native';
 
-import WebView from './Pages/WebView'
+import TestWebView from './Pages/TestWebView'
 import PayPal from './Pages/PayPal'
 import Stripe from './Pages/Stripe'
 
@@ -20,8 +20,8 @@ console.disableYellowBox = true;
 
 const TabNavigator = createMaterialBottomTabNavigator(
   {
-    WebView: {
-      screen: WebView,
+    TestWebView: {
+      screen: TestWebView,
       navigationOptions: {
         
       }
@@ -54,7 +54,7 @@ const TabNavigator = createMaterialBottomTabNavigator(
     }
   },
   {
-    initialRouteName: 'WebView',
+    initialRouteName: 'TestWebView',
     activeColor: '#ffffff',
     inactiveColor: '#bda1f7',
     barStyle: { backgroundColor: '#6948f4' },
