@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { View, Platform, StyleSheet } from 'react-native'
 import DrawerLayout from 'react-native-drawer-layout-polyfill'
-//import stripe from 'tipsi-stripe'
+import stripe from 'tipsi-stripe'
 import Header from './src/components/Header'
 import MenuItem from './src/components/MenuItem'
 import ApplePayScreen from './src/scenes/ApplePayScreen'
@@ -13,6 +13,12 @@ import CardTextFieldScreen from './src/scenes/CardTextFieldScreen'
 import SourceScreen from './src/scenes/SourceScreen'
 import testID from './src/utils/testID'
 
+
+stripe.setOptions({
+  publishableKey: 'pk_test_ZdvotcrtHWQcbxu3dfAfhhN200JZPJVzMe',
+  merchantId: 'jvandres247@gmail.com',
+  androidPayMode: 'test',
+})
 
 export default class TestStripe extends PureComponent {
   state = {
