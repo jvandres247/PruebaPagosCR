@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* PruebaPagosCRTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PruebaPagosCRTests.m */; };
 		3754D54CBEB0E0CF210F12A2 /* libPods-PruebaPagosCR-PruebaPagosCRTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4A60A365CEB95E698A2951 /* libPods-PruebaPagosCR-PruebaPagosCRTests.a */; };
+		49F8819C24353C14001946B6 /* TPSStripe in Resources */ = {isa = PBXBuildFile; fileRef = 49F8819B24353C14001946B6 /* TPSStripe */; };
 		90120604EC1266A0D637ED5D /* libPods-PruebaPagosCR.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A45E1EA8682DAF98838CE9B4 /* libPods-PruebaPagosCR.a */; };
 		BF0B5FD3757064439416DD4D /* libPods-PruebaPagosCR-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E153D0C9CCB70D84898BF315 /* libPods-PruebaPagosCR-tvOSTests.a */; };
 		D49BE2C35B722E36A8C9F5FD /* libPods-PruebaPagosCR-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 053006BBBA463D87EB6744A6 /* libPods-PruebaPagosCR-tvOS.a */; };
@@ -56,6 +57,7 @@
 		2D02E47B1E0B4A5D006451C7 /* PruebaPagosCR-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PruebaPagosCR-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* PruebaPagosCR-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PruebaPagosCR-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		339CDA926887A799A061BBF4 /* Pods-PruebaPagosCR-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaPagosCR-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PruebaPagosCR-tvOSTests/Pods-PruebaPagosCR-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		49F8819B24353C14001946B6 /* TPSStripe */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TPSStripe; sourceTree = "<group>"; };
 		59A23873D2F465F3FD928E1B /* Pods-PruebaPagosCR-PruebaPagosCRTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaPagosCR-PruebaPagosCRTests.release.xcconfig"; path = "Target Support Files/Pods-PruebaPagosCR-PruebaPagosCRTests/Pods-PruebaPagosCR-PruebaPagosCRTests.release.xcconfig"; sourceTree = "<group>"; };
 		7AB3FE13F291B8F0D8E26BA3 /* Pods-PruebaPagosCR-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaPagosCR-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PruebaPagosCR-tvOS/Pods-PruebaPagosCR-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		836784DFDEAC36D5B1F098E4 /* Pods-PruebaPagosCR-PruebaPagosCRTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PruebaPagosCR-PruebaPagosCRTests.debug.xcconfig"; path = "Target Support Files/Pods-PruebaPagosCR-PruebaPagosCRTests/Pods-PruebaPagosCR-PruebaPagosCRTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				49F8819B24353C14001946B6 /* TPSStripe */,
 				13B07FAE1A68108700A75B9A /* PruebaPagosCR */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PruebaPagosCRTests */,
@@ -194,7 +197,6 @@
 				339CDA926887A799A061BBF4 /* Pods-PruebaPagosCR-tvOSTests.debug.xcconfig */,
 				CF4927A1619901029C48726D /* Pods-PruebaPagosCR-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -341,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				49F8819C24353C14001946B6 /* TPSStripe in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +439,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Stripe/Stripe.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -455,6 +459,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -550,6 +555,7 @@
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Stripe/Stripe.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -569,6 +575,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

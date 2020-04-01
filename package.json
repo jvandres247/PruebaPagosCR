@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.0",
+    "react-native-drawer-layout-polyfill": "^2.0.0",
     "react-native-gesture-handler": "^1.5.2",
     "react-native-paper": "^3.3.0",
     "react-native-reanimated": "^1.4.0",
@@ -19,7 +20,8 @@
     "react-native-vector-icons": "^6.6.0",
     "react-native-webview": "^9.0.2",
     "react-navigation": "^4.0.10",
-    "react-navigation-material-bottom-tabs": "^2.1.5"
+    "react-navigation-material-bottom-tabs": "^2.1.5",
+    "tipsi-stripe": "^7.5.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

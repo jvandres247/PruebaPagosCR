@@ -11,7 +11,7 @@ import {
 
 import TestWebView from './Pages/TestWebView'
 import PayPal from './Pages/PayPal'
-import Stripe from './Pages/Stripe'
+import TestStripe from './Pages/TestStripe'
 
 import {createAppContainer} from 'react-navigation';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
@@ -39,8 +39,8 @@ const TabNavigator = createMaterialBottomTabNavigator(
         barStyle: { backgroundColor: '#2163f6' }, */
       }
     },
-    Stripe: {
-      screen: Stripe,
+    TestStripe: {
+      screen: TestStripe,
       navigationOptions: {
         // tabBarIcon: ({ tintColor }) => (
         //   <View>
