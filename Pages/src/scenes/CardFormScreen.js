@@ -1,20 +1,20 @@
-import React, { PureComponent } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import stripe from 'tipsi-stripe'
-import Button from '../components/Button'
-import testID from '../utils/testID'
+import React, {PureComponent} from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import stripe from 'tipsi-stripe';
+import Button from '../components/Button';
+import axios from 'axios';
 
 export default class CardFormScreen extends PureComponent {
-  static title = 'Card Form'
+  static title = 'Card Form';
 
   state = {
     loading: false,
     token: null,
-  }
+  };
 
   handleCardPayPress = async () => {
     try {
-      this.setState({ loading: true, token: null })
+      this.setState({loading: true, token: null});
       const token = await stripe.paymentRequestWithCardForm({
         // Only iOS support this options
         smsAutofillDisabled: true,
@@ -31,22 +31,38 @@ export default class CardFormScreen extends PureComponent {
             email: 'ghaugeh0@printfriendly.com',
           },
         },
-      })
+      });
 
-      this.setState({ loading: false, token })
+      this.setState({loading: false, token});
     } catch (error) {
-      this.setState({ loading: false })
+      this.setState({loading: false});
     }
-  }
+  };
+
+  doPayment = async () => {
+    this.setState({loading: true});
+
+    axios({
+      method: 'POST',
+      url:
+        'https://us-central1-stripe-react-native-cr-test.cloudfunctions.net/completepayWithStripe',
+      data: {
+        amount: 10.6,
+        currency: 'usd',
+        token: this.state.token,
+      },
+    }).then(response => {
+      console.log(response);
+      this.setState({loading: false});
+    });
+  };
 
   render() {
-    const { loading, token } = this.state
+    const {loading, token} = this.state;
 
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>
-          Card Form Example
-        </Text>
+        <Text style={styles.header}>Card Form Example</Text>
         <Text style={styles.instruction}>
           Click button to show Card Form dialog.
         </Text>
@@ -54,18 +70,21 @@ export default class CardFormScreen extends PureComponent {
           text="Enter you card and pay"
           loading={loading}
           onPress={this.handleCardPayPress}
-          
         />
-        <View
-          style={styles.token}>
-          {token &&
-            <Text style={styles.instruction}>
-              Token: {token.tokenId}
-            </Text>
-          }
+        <View style={styles.token}>
+          {token && (
+            <>
+              <Text style={styles.instruction}>Token: {token.tokenId}</Text>
+              <Button
+                text="Make Payment"
+                loading={loading}
+                onPress={this.doPayment}
+              />
+            </>
+          )}
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -88,4 +107,4 @@ const styles = StyleSheet.create({
   token: {
     height: 20,
   },
-})
+});

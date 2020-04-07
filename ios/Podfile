@@ -54,6 +54,8 @@ target 'PruebaPagosCR' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  pod 'Stripe', '~> 14.0.0'
+
   target 'PruebaPagosCRTests' do
     inherit! :complete
     # Pods for testing

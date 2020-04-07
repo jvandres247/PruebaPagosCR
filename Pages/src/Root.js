@@ -14,10 +14,8 @@ import SourceScreen from './scenes/SourceScreen'
 import testID from './utils/testID'
 
 stripe.setOptions({
-  publishableKey: '<PUBLISHABLE_KEY>',
-  merchantId: '<MERCHANT_ID>',
-  androidPayMode: 'test',
-})
+  publishableKey: 'pk_test_tLlKbUDsBTqUCUWKbpBfMqX0',
+  })
 
 export default class Root extends PureComponent {
   state = {

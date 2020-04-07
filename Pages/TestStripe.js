@@ -14,9 +14,7 @@ import SourceScreen from './src/scenes/SourceScreen'
 import testID from './src/utils/testID'
 
 stripe.setOptions({
-  publishableKey: 'pk_test_ZdvotcrtHWQcbxu3dfAfhhN200JZPJVzMe',
-  merchantId: 'jvandres247@gmail.com',
-  androidPayMode: 'test',
+  publishableKey: 'pk_test_tLlKbUDsBTqUCUWKbpBfMqX0',
   })
 
 
