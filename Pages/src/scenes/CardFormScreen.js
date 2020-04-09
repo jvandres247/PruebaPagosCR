@@ -34,6 +34,7 @@ export default class CardFormScreen extends PureComponent {
       });
 
       this.setState({loading: false, token});
+      console.log('--->', token)
     } catch (error) {
       this.setState({loading: false});
     }
@@ -47,8 +48,8 @@ export default class CardFormScreen extends PureComponent {
       url:
         'https://us-central1-stripe-react-native-cr-test.cloudfunctions.net/completepayWithStripe',
       data: {
-        amount: 10.6,
-        currency: 'usd',
+        amount: 10000,
+        currency: 'mxn',
         token: this.state.token,
       },
     }).then(response => {

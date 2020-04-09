@@ -17,7 +17,7 @@ exports.completepayWithStripe = functions.https.onRequest(
       .create({
         amount: request.body.amount,
         currency: request.body.currency,
-        source: 'tok_visa',
+        source: 'tok_mx',
       })
       // eslint-disable-next-line promise/always-return
       .then(charge => {
